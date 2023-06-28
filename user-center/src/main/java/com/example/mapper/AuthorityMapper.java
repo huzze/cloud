@@ -1,18 +1,10 @@
 package com.example.mapper;
 
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.entity.Authority;
+import org.apache.ibatis.annotations.Mapper;
 
-public interface AuthorityMapper {
-    int deleteByPrimaryKey(String id);
-
-    int insert(Authority record);
-
-    int insertSelective(Authority record);
-
-    Authority selectByPrimaryKey(String id);
-
-    int updateByPrimaryKeySelective(Authority record);
-
-    int updateByPrimaryKey(Authority record);
+@Mapper
+public interface AuthorityMapper extends BaseMapper<Authority> {
 }
