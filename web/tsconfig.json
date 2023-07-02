@@ -23,7 +23,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    /* 解决引入组件 npm run build 报错 start */
+    "noImplicitAny": false,
+    "allowJs": true,
+    /* 解决引入组件 npm run build 报错 end */
   },
 
 "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
