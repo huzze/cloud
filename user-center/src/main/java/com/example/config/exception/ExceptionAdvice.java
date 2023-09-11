@@ -1,6 +1,6 @@
 package com.example.config.exception;
 
-import com.example.constants.ResultEnum;
+import com.example.constants.impl.ResultEnum;
 import com.example.entity.common.Result;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;

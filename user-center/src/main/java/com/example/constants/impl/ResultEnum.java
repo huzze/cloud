@@ -1,6 +1,6 @@
-package com.example.constants;
+package com.example.constants.impl;
 
-import com.example.service.common.IResult;
+import com.example.constants.IResult;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

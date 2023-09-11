@@ -1,4 +1,4 @@
-package com.example.service.common;
+package com.example.constants;
 
 public interface IResult {
     Integer getCode();

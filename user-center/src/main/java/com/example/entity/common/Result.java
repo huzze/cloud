@@ -1,7 +1,7 @@
 package com.example.entity.common;
 
-import com.example.constants.ResultEnum;
-import com.example.service.common.IResult;
+import com.example.constants.impl.ResultEnum;
+import com.example.constants.IResult;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
