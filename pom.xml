@@ -12,6 +12,7 @@
         <module>user-center</module>
         <module>eureka</module>
         <module>zuul</module>
+        <module>ftp-model</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
