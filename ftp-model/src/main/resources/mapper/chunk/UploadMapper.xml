@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ftp.dao.ChunkFileMapper">
+    <insert id="add" parameterType="com.ftp.domain.ChunkFile">
+        <selectKey keyProperty="id" resultType="java.lang.Integer" order="AFTER">
+            select LAST_INSERT_ID() as id
+        </selectKey>
+        INSERT INTO chunk_file
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="chunkNum != null and chunkNum != ''">chunk_num,</if>
+            <if test="chunkSize != null and chunkSize != ''">chunk_size,</if>
+            <if test="curChunkSize != null">cur_chunk_size,</if>
+            <if test="totalSize != null">total_size,</if>
+            <if test="name != null and name != ''">`name`,</if>
+            <if test="identifier != null and identifier != ''">identifier,</if>
+            <if test="relativePath != null and relativePath != ''">relative_path,</if>
+            <if test="totalChunks">total_chunks,</if>
+            <if test="type != null and type != ''">`type`,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="chunkNum != null and chunkNum != ''">#{chunkNum},</if>
+            <if test="chunkSize != null and chunkSize != ''">#{chunkSize},</if>
+            <if test="curChunkSize != null">#{curChunkSize},</if>
+            <if test="totalSize != null">#{totalSize},</if>
+            <if test="quoteVolumeId != null and quoteVolumeId != ''">#{quoteVolumeId},</if>
+            <if test="citedVolumeId != null and citedVolumeId != ''">#{citedVolumeId},</if>
+            <if test="relativePath != null and relativePath != ''">#{relativePath},</if>
+            <if test="totalChunks != null">#{totalChunks},</if>
+            <if test="createUid != null and createUid != ''">#{createUid},</if>
+        </trim>
+    </insert>
+    <select id="getByIdentifierAndChunkNum" resultType="com.ftp.domain.ChunkFile">
+        SELECT
+            id,
+            chunk_num,
+            chunk_size,
+            cur_chunk_size,
+            total_size,
+            `name`,
+            identifier,
+            relative_path,
+            total_chunks,
+            `type`
+        FROM
+            chunk_file
+        WHERE
+            identifier = #{identifier}
+            AND chunk_num = #{chunkNum}
+    </select>
+</mapper>
